@@ -7,6 +7,18 @@ Due to time constraints there is nothing here yet, but it will be updated over t
 
 We will use [Mozilla's Common Voice Dataset](https://www.kaggle.com/mozillaorg/common-voice). Most of the audios are already tagged, so I will only use them for now. Then we can use unlabelled audio for further training
 
-Each audio file is sliced to equal lengths and the main features of the audio section are highlighted, such as mean frequency, standard deviation of frequency, first and third quantile and etc
+Each audio file is sliced into 5-second segments and the main characteristics of the audio segment, such as average frequency, standard deviation of frequency, first and third quantiles, etc., are highlighted. To increase the accuracy, only the frequencies 40hz-280hz are kept, as these are the frequencies of the human voice. 
 
-If the accuracy of the classifier proves insufficient, you can also remove noise from the audio (all frequencies outside 0hz-280hz), and allocate more features from each audio, such as average of fundamental frequency or average of dominant frequency
+If the classifier accuracy proves insufficient, more features can be extracted from each audio, such as the average value of the fundamental frequency or the average value of the dominant frequency. It is also possible to change the length of the segments into which each segment is divided
+
+## Training models
+
+I balanced the number of female and male voice examples and trained the following patterns
+
+* Decision Tree
+* Random Forest
+* Gradient Boosting
+* Support Vector Machine
+* Multilayer Perceptron
+
+Next, it is necessary to compare type I and type II errors, and see the importance of each parameter. 
