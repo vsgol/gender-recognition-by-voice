@@ -24,3 +24,5 @@ I balanced the number of female and male voice examples and trained the followin
 Currently 88% accuracy is achieved on Multilayer Perceptron and Support Vector Machine. More accuracy (90%-95%) can probably be achieved with better sampling of parameters from datasets, but dataset processing takes too much time
 
 Next, it is necessary to compare type I and type II errors, and see the importance of each parameter. 
+
+To predict the gender of the speaker in a large audio file, I use 5-second clippings and count the error for each fragment, which is wrong 
